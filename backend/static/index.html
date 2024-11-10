@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dimaro Kartenverwaltung</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Dimaro Kartenverwaltung</h1>
+
+    <!-- Button zum Öffnen des Modals -->
+    <button id="open-modal-btn">Neues Monster erstellen</button>
+
+    <div id="create-card-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="close-modal-btn">&times;</span>
+        <h2>Neues Monster erstellen</h2>
+        <form id="create-card-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="health_points">Lebenspunkte:</label>
+          <input
+            type="number"
+            id="health_points"
+            name="health_points"
+            required
+          />
+
+          <label for="attack_damage">Angriffsschaden:</label>
+          <input
+            type="number"
+            id="attack_damage"
+            name="attack_damage"
+            required
+          />
+
+          <label for="energy_type">Energie-Typ:</label>
+          <input type="text" id="energy_type" name="energy_type" required />
+
+          <label for="image">Bild:</label>
+          <input type="file" id="image" name="image" accept="image/*" />
+
+          <!-- Bildvorschau -->
+          <div id="image-preview" class="image-preview"></div>
+
+          <button type="submit">Monster erstellen</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Kartenübersicht -->
+    <section id="cards-list">
+      <h2>Alle Monsterkarten</h2>
+      <div id="cards-container"></div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
